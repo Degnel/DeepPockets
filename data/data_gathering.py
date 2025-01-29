@@ -18,10 +18,10 @@ class FinancialDataFetcher:
                 'BTC-USD', 'ETH-USD', 'BNB-USD', 'USDT-USD', 'SOL-USD',
                 'ADA-USD', 'XRP-USD', 'DOT-USD', 'DOGE-USD', 'AVAX-USD'
             ],
-            'Matières premières': [
-                'GC=F', 'SI=F', 'CL=F', 'NG=F', 'ZC=F',  # Or, Argent, Pétrole, Gaz naturel, Maïs
-                'ZW=F', 'ZS=F', 'ZL=F', 'HG=F'  # Blé, Soja, Huile de soja, Cuivre
-            ],
+            # 'Matières premières': [
+            #     'GC=F', 'SI=F', 'CL=F', 'NG=F', 'ZC=F',  # Or, Argent, Pétrole, Gaz naturel, Maïs
+            #     'ZW=F', 'ZS=F', 'ZL=F', 'HG=F'  # Blé, Soja, Huile de soja, Cuivre
+            # ],
             'Monnaies': [
                 'EURUSD=X', 'JPYUSD=X', 'GBPUSD=X', 'CHFUSD=X', 'CNYUSD=X', 'HKDUSD=X'
             ]
@@ -39,6 +39,7 @@ class FinancialDataFetcher:
         hist['Close'] = hist['Close']
         hist['Market Cap'] = stock.info.get('marketCap', None)
         hist['Shares Outstanding'] = stock.info.get('sharesOutstanding', None)
+        hist['Currency'] = stock.info.get('currency', 'USD')
         return hist
 
     def fetch_data(self):

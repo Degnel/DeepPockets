@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "black>=25.1.0",
+    "pip>=25.0",
     "torch>=2.5.1",
     "yfinance>=0.2.52",
 ]
